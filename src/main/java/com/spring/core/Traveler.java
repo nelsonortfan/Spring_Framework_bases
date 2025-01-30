@@ -9,8 +9,8 @@ public class Traveler {
 
     private Vehicle vehicle;
 
-    @Autowired // inyectamos la dependencia de Cycle con su nombre de bean "cycle"
-    public Traveler(@Qualifier("cycle") Vehicle vehicle){
+    @Autowired // inyectamos la dependencia de tipo Vehicle basado en @Primary para que tome Car
+    public Traveler(Vehicle vehicle){
         this.vehicle = vehicle;
     } // Usamos Qualifier porque hay multples bean de tipo Vehicle y se puede generar problemas
 
